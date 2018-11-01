@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://www.xftz.cn/templets/yuanyou/js/jquery-1.12.1.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+	<script type="text/javascript">
+	$(function(){
+		$(".list>li").hover(function(){
+			$(this).toggleClass("hover");
+		})
+
+		var img=$(".banner ul li");
+		var dian=$(".banner ol li");
+		var run=true;
+		img.eq(0).show();
+
+
+
+		dian.mouseenter(function(){
+			var i=$(this).index();
+			img.stop(true,true).eq(i).fadeIn(500).siblings().fadeOut(500);
+			$(this).addClass("current").siblings().removeClass("current");
+		})
+
+		function go(){
+			if(run){
+				if($(".banner ol li.current").index()==5){
+					$(".banner ol li").eq(0).triggerHandler("mouseenter");
+				}else{
+					$(".banner ol li.current").next().triggerHandler("mouseenter");
+				}
+			}
+		}
+		timer=setInterval(go,1000)
+		$(".banner").hover(function(){
+			run=false;
+		},function(){
+			run=true;
+		})
+	})
+	</script>
+</head>
+<body>
+	<div class="nav">
+		<div class="nav_in">
+			<ul class="list">
+				<li class="green">
+					<a href="javascript:;">首页</a>
+					
+				</li>
+				<li>
+					<a href="javascript:;">景点
+					<i></i></a>
+					<div class="more much">
+						<span class="first">
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+						<span>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">酒店
+					<i></i></a>
+					<div class="more">
+						<span>
+							<a href="javascript:;">国内酒店</a>
+							<a href="javascript:;">国内酒店</a>
+							<a href="javascript:;">国内酒店</a>
+							<a href="javascript:;">国内酒店</a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">机票
+					<i></i></a>
+					<div class="more">
+						<span>
+							<a href="javascript:;">国内机票</a>
+							<a href="javascript:;">国内机票</a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">周边游
+					<i></i></a>
+					<div class="more much">
+						<span class="first">
+							<a href="javascript:;">酒店+景点</a>
+							<a href="javascript:;">酒店+景点</a>
+							<a href="javascript:;">酒店+景点</a>
+							<a href="javascript:;">酒店+景点</a>
+						</span>
+						<span>
+							<a href="javascript:;">酒店景点</a>
+							<a href="javascript:;">酒店景点</a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">国内游
+					<i></i></a>
+					<div class="more">
+						<span>
+							<a href="javascript:;">国内机票</a>
+							<a href="javascript:;">国内机票</a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">出境游
+					<i></i></a>
+					<div class="more">
+						<span>
+							<a href="javascript:;">国内机票</a>
+							<a href="javascript:;">国内机票</a>
+							<a href="javascript:;">国内机票</a>
+							<a href="javascript:;">国内机票</a>
+							<a href="javascript:;">国内机票</a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">游轮
+					<i></i></a>
+					<div class="more much">
+						<span class="first">
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+						<span>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">签证</a>
+				</li>
+				<li>
+					<a href="javascript:;">火车票</a>
+				</li>
+				<li>
+					<a href="javascript:;">汽车票</a>
+				</li>
+				<li>
+					<a href="javascript:;">同程专线</a>
+				</li>
+				<li>
+					<a href="javascript:;">定制旅游
+					<i></i></a>
+					<div class="more much">
+						<span class="first">
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+						<span>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">金融
+					<i></i></a>
+					<div class="more much">
+						<span class="first">
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+						<span>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">攻略
+					<i></i></a>
+					<div class="more much">
+						<span class="first">
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+						<span>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+							<a href="javascript:;">国内景点</a>
+						</span>
+					</div>
+				</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+	</div>
+
+
+
+	<div class="banner">
+		<ul>
+			<li><a href="javascript:;"><img src="image/img_1.jpg" alt=""></a></li>
+			<li><a href="javascript:;"><img src="image/img_2.jpg" alt=""></a></li>
+			<li><a href="javascript:;"><img src="image/img_3.jpg" alt=""></a></li>
+			<li><a href="javascript:;"><img src="image/img_4.jpg" alt=""></a></li>
+			<li><a href="javascript:;"><img src="image/img_5.jpg" alt=""></a></li>
+			<li><a href="javascript:;"><img src="image/img_6.jpg" alt=""></a></li>
+		</ul>
+		<ol>
+			<li class="current">11.11联欢惠</li>
+			<li>出境清仓</li>
+			<li>游万达 上同程</li>
+			<li>灵山 拈花湾</li>
+			<li>我想和你去云南</li>
+			<li>文艺厦门</li>
+		</ol>
+	</div>
+</body>
+</html>

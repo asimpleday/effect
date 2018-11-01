@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery.min.js"></script>
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			font-size: 14px;
+			font-family: 微软雅黑;
+			color:#fff;
+		}
+		.box{
+			width:100%;
+			height:40px;
+			margin-top: 100px;
+			background: #01204f;
+		}
+		.box ul{
+			width:984px;
+			height:40px;
+			margin:0 auto;
+			position: relative;
+		}
+		.box ul li{
+			float:left;
+			line-height: 40px;
+			position: relative;
+		}
+		.box ul li a{
+			display: block;
+			padding:0 10px;
+		}
+		.box ul li.active a{
+			background: #c00;
+		}
+		.box ul .slide{
+			position: absolute;
+			left:0;
+			top:0;
+			width:50px;
+			height:40px;
+			background: #c00;
+		}
+	</style>
+	<script>
+	$(function(){
+		$(".box ul li").hover(function(){
+			var index=$(this).index("li");
+			var listW=0;
+			$(".box ul li:lt("+index+")").each(function(){
+				listW+=$(this).width();
+			})
+			$(".slide").css("width",$(this).width()).stop().animate({"left":listW},300);
+		},function(){
+			$(".slide").css("width",50).stop().animate({"left":0},300)
+		})
+			
+		
+	})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<ul>	
+			<div class="slide"></div>
+			<li class="active"><a href="javascript:;">首页</a></li>
+			<li><a href="javascript:;">百家</a></li>
+			<li><a href="javascript:;">财经</a></li>
+			<li><a href="javascript:;">娱乐</a></li>
+			<li><a href="javascript:;">体育</a></li>
+			<li><a href="javascript:;">互联网</a></li>
+			<li><a href="javascript:;">时尚</a></li>
+			<li><a href="javascript:;">汽车</a></li>
+			<li><a href="javascript:;">国内</a></li>
+			<li><a href="javascript:;">国际</a></li>
+			<li><a href="javascript:;">军事</a></li>
+			<li><a href="javascript:;">社会</a></li>
+			<li><a href="javascript:;">视频</a></li>
+			<li><a href="javascript:;">传媒</a></li>
+			<li><a href="javascript:;">个性推荐</a></li>
+			<li><a href="javascript:;">房产</a></li>
+			<li><a href="javascript:;">名站</a></li>
+			<li><a href="javascript:;">更多</a></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		table{
+			border-collapse: collapse;
+			width:800px;
+			margin:100px auto;
+		}
+		tr{
+			border-bottom:#ccc solid 1px;
+		}
+		td{
+			padding:10px;
+
+		}
+		a{
+			text-decoration: none;
+		}
+		.active{
+			color:gold;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>
+		$(function(){
+
+
+
+			//定义一个数组并把tr放进去
+			function initNodeList(){
+				var arr=[];
+				$("table tr").each(function(){
+					arr.push($(this).html());
+				})
+				return arr;
+
+			}
+
+
+
+			//重新渲染页面
+			function initTable(arr){
+				$("table").html("");
+				for(var key in arr){
+					$("table").append("<tr>"+arr[key]+"</tr>");
+				}
+			}
+
+			var node=initNodeList();
+
+
+
+
+			$(document).on("click",".up",function(){
+				var tr=$(this).parents("tr");
+				var i=tr.index();
+				if(i!=0){
+					var temp=null;
+					temp=node[i];
+					node[i]=node[i-1];
+					node[i-1]=temp;
+					initTable(node);
+					node=initNodeList();
+				}
+			})
+
+
+
+			$(document).on("click",".down",function(){
+				var tr=$(this).parents("tr");
+				var i=tr.index();
+				if(i!=$("tr").length-1){
+					var temp=node[i];
+					node[i]=node[i+1];
+					node[i+1]=temp;
+					initTable(node);
+					node=initNodeList();
+				}
+			})
+
+
+			$(document).on("click",".ding",function(){
+				var tr=$(this).parents("tr");
+				var i=tr.index();
+				var temp=node[i];
+				delete node[i];
+				var newArr=[];
+				newArr.push(temp);
+				for(var key in node){
+					newArr.push(node[key]);
+				}
+				initTable(newArr);
+				node=initNodeList();
+			})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		})
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>2016微博之夜红毯：网红气质不输明星</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;" class="up">上移</a></td>
+			<td><a href="javascript:;" class="down">下移</a></td>
+			<td><a href="javascript:;" class="ding">置顶</a></td>
+		</tr>
+		<tr>
+			<td>五小时！魔兽世界英雄难度古尔丹首杀诞生</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;" class="up">上移</a></td>
+			<td><a href="javascript:;" class="down">下移</a></td>
+			<td><a href="javascript:;" class="ding">置顶</a></td>
+		</tr>
+		<tr>
+			<td>海滩上现大量"免费大餐" 当地民众纷纷将其大卸八块(1)</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;" class="up">上移</a></td>
+			<td><a href="javascript:;" class="down">下移</a></td>
+			<td><a href="javascript:;" class="ding">置顶</a></td>
+		</tr>
+		<tr>
+			<td>时光挖挖哇 | 古人逆天发明：一个比一个牛</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;" class="up">上移</a></td>
+			<td><a href="javascript:;" class="down">下移</a></td>
+			<td><a href="javascript:;" class="ding">置顶</a></td>
+		</tr>
+		<tr>
+			<td>外国美女警花变成健身教练 她凭借的是颜值更是身材</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;" class="up">上移</a></td>
+			<td><a href="javascript:;" class="down">下移</a></td>
+			<td><a href="javascript:;" class="ding">置顶</a></td>
+		</tr>
+	</table>
+</body>
+</html>

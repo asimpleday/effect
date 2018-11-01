@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<title>Document</title>
+	<style>
+		*{
+		margin: 0;
+		padding: 0;
+		font: 14px/1.5 "Microsoft Yahei",SimSun;
+		color:#525252;;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color:#333;
+		}
+		.clear:after {
+		    clear: both;
+		    display: block;
+		    content: "";
+		    height: 0;
+		    line-height: 0;
+		    font-size: 0;
+		}
+		.role{
+			width:912px;
+			height:403px;
+			margin:100px auto;
+		}
+		.role h3{
+			font-size: 24px;
+			line-height: 50px;
+		}
+		.role h3 em{
+			font-style: normal;
+			font-size: 12px;
+			font-weight: normal;
+			color:#666;
+		}
+		.role .con{
+			width:912px;
+			height:318px;
+			background:#F3F3F3 url(image/role_bg.jpg) no-repeat right 0;
+			position: relative;
+			overflow: hidden;
+		}
+		.role .con .tit{
+			position: absolute;
+			top:0;
+			left:0;
+		}
+		.role .con .tit ul{
+			
+		}
+		.role .con .tit ul li{
+			float: left;
+			width:74px;
+			height:26px;
+			margin:24px 0 24px 26px;
+			font-size: 18px;
+			cursor: pointer;
+			text-align: center;
+			line-height: 26px;
+		}
+		.role .con .tit ul li.active{
+			background: #192134;
+			color:#fff;
+		}
+		.box{
+			position: relative;
+		}
+		.box .jieshao{
+			position: relative;
+			display: none;
+		}
+		.box .jieshao.cur{
+			display: block;
+		}
+		.box .jieshao .text{
+			width:400px;
+			line-height: 34px;
+			position: absolute;
+			left:29px;
+			top:86px;
+		}
+		.box .jieshao .text strong{
+			font-size: 20px;
+			color:#9F0000;
+			font-weight: bold;
+		}
+		.box .jieshao .text p{
+			line-height: 34px;
+		}
+		.box .jieshao .text em{
+			font-weight: 700;
+		}
+		.box .jieshao .text i{
+			display: inline-block;
+			width:16px;
+			height:18px;
+			background: url(image/star.png) no-repeat 0 0;
+			vertical-align:middle;
+		}
+		.box .jieshao .text i.kong{
+			background: url(image/star2.png) no-repeat 0 0;
+		}
+		.box .jieshao .text .liaojie{
+			width:118px;
+			height:30px;
+			display: block;
+			font-size: 18px;
+			text-align: center;
+			line-height: 30px;
+			border:#000 solid 1px;
+			
+		}
+		.box .jieshao .img{
+			width:544px;
+			height:403px;
+			position: absolute;
+			right:0;
+		}
+	</style>
+	<script>
+	$(function(){
+		$(".tit li").mouseover(function(){
+			$(this).addClass("active").siblings("li").removeClass("active");
+			var index=$(this).index();
+			$(".jieshao .text").stop( true, true ).animate({"left":-300},300);
+			$(".jieshao .img").stop( true, true ).animate({"right":-600},300,function(){
+				$(".jieshao").removeClass("cur");
+				$(".jieshao").eq(index).addClass("cur");
+				$(".jieshao").eq(index).find(".text").animate({"left":"29px"},300);
+				$(".jieshao").eq(index).find(".img").animate({"right":0},300);
+			});
+			
+		})
+	})
+	</script>
+</head>
+<body>
+	<div class="role">
+		<h3>职业介绍<em> /ROLE PLACEMENT</em></h3>
+		<div class="con">
+			<div class="tit">
+				<ul class="clear">
+					<li class="active">御剑</li>
+					<li>战刃</li>
+					<li>破军</li>
+					<li>苍龙</li>
+				</ul>
+			</div>
+			<div class="box">
+				<div class="jieshao cur">
+					<div class="text">
+						<strong>满堂花醉三干客，一剑光寒四十州</strong><br>
+						<p>中原武功三大宗之一，剑法清灵飘逸，逍遥洒脱。其中弟子以侠义名满天下，为框扶武林正义参加以役。</p>
+						<em>上手难度:</em>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i class="kong"></i>
+						<i class="kong"></i><br>
+						<em>使用武器:</em>
+						剑<br>
+						<a href="javascript:;" class="liaojie">了解职业 ></a>
+					</div>
+					<div class="img">
+						<img src="image/role1.png" height="403" width="544" alt="">
+					</div>
+				</div>
+				<div class="jieshao">
+					<div class="text">
+						<strong>满堂花醉三干客，一剑光寒四十州</strong><br>
+						<p>中原武功三大宗之一，剑法清灵飘逸，逍遥洒脱。其中弟子以侠义名满天下，为框扶武林正义参加以役。</p>
+						<em>上手难度:</em>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i class="kong"></i>
+						<i class="kong"></i><br>
+						<em>使用武器:</em>
+						剑<br>
+						<a href="javascript:;" class="liaojie">了解职业 ></a>
+					</div>
+					<div class="img">
+						<img src="image/role2.png" height="403" width="544" alt="">
+					</div>
+				</div>
+				<div class="jieshao">
+					<div class="text">
+						<strong>满堂花醉三干客，一剑光寒四十州</strong><br>
+						<p>中原武功三大宗之一，剑法清灵飘逸，逍遥洒脱。其中弟子以侠义名满天下，为框扶武林正义参加以役。</p>
+						<em>上手难度:</em>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i class="kong"></i>
+						<i class="kong"></i><br>
+						<em>使用武器:</em>
+						剑<br>
+						<a href="javascript:;" class="liaojie">了解职业 ></a>
+					</div>
+					<div class="img">
+						<img src="image/role3.png" height="403" width="544" alt="">
+					</div>
+				</div>
+				<div class="jieshao">
+					<div class="text">
+						<strong>满堂花醉三干客，一剑光寒四十州</strong><br>
+						<p>中原武功三大宗之一，剑法清灵飘逸，逍遥洒脱。其中弟子以侠义名满天下，为框扶武林正义参加以役。</p>
+						<em>上手难度:</em>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i class="kong"></i>
+						<i class="kong"></i><br>
+						<em>使用武器:</em>
+						剑<br>
+						<a href="javascript:;" class="liaojie">了解职业 ></a>
+					</div>
+					<div class="img">
+						<img src="image/role4.png" height="403" width="544" alt="">
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

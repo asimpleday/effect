@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" placeholder="请输入验证码" id="input">
+	<button id="btn">点击发送验证码</button>
+	<script>
+	window.onload=function(){
+		var input=document.getElementById("input");
+		var btn=document.getElementById("btn");
+		var count=10;
+		var timer;
+
+
+		btn.onclick=function(){
+			this.disabled=true;
+			timer=setInterval(send,1000);
+			function send(){
+				count--;
+				btn.innerHTML="还有"+count+"秒重新发送验证码";
+				if(count==0){
+					clearInterval(timer);
+					btn.innerHTML="点击发送验证码";
+					btn.disabled=false;
+				}
+			}	
+
+		}
+
+	}
+	</script>
+</body>
+</html>

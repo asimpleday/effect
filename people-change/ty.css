@@ -1,0 +1,200 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	font: 14px/1.5 "\5FAE\8F6F\96C5\9ED1",arial;
+	color: #353535;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+	outline: none;
+}
+
+.role {
+	background: url("./img/bg.jpg") center top no-repeat;
+}
+
+.role .role-container {
+	padding: 50px 0px 0px 0px;
+	height: 553px;
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+	text-align: left;
+	overflow: hidden;
+}
+
+.role .role-container h2 {
+	color:#fff;
+	margin: 0 0 50px;
+	font-size: 40px;
+	line-height: 110%;
+}
+
+.role .role-container h2 i {
+	color: #363839;
+	display: block;
+	font-size: 20px;
+	font-weight: normal;
+	font-style: normal;
+	font-family: tahoma,helvetica,arial,sans-serif;
+	line-height: 100%;
+}
+
+.role .role-container h2 span {
+	color:#cfae69;
+}
+
+.role .role-container ul {
+	position: absolute;
+	left: 0;
+	top: 97px;
+	width: 100%;
+	height: 422px;
+	overflow: hidden;
+}
+
+.role .role-container ul li {
+	position: absolute;
+	top: 72px;
+	background: #fff;
+	width: 63px;
+	height: 350px;
+	z-index: 2;
+}
+
+.role .role-container ul li.p1 {
+	left:0px;
+	z-index:0;
+}
+
+.role .role-container ul li.p2 {
+	left:559px;
+	z-index:0;
+}
+
+.role .role-container ul li.p3 {
+	left:622px;
+	z-index:0;
+}
+
+.role .role-container ul li.p4 {
+	left:685px;
+	z-index:0;
+}
+
+.role .role-container ul li.p5 {
+	left:748px;
+	z-index:0;
+}
+
+.role .role-container ul li.p6 {
+	left:811px;
+	z-index:0;
+}
+
+.role .role-container ul li.p7 {
+	left:874px;
+	z-index:0;
+}
+
+.role .role-container ul li.p8 {
+	left:937px;
+	z-index:0;
+}
+
+
+.role .role-container ul .cur {
+  position: absolute;
+  top: 72px;
+  width: 559px;
+  height: 350px;
+  background: url('./img/bg-uts.jpg') no-repeat 0 0;
+  z-index: 1;
+}
+
+.role .role-container ul .p1_1 {
+	left: 0px;
+}
+
+.role .role-container ul .p2_2 {
+	left: 63px;
+}
+
+.role .role-container ul .p3_3 {
+	left: 126px;
+}
+
+.role .role-container ul .p4_4 {
+	left: 189px;
+}
+
+.role .role-container ul .p5_5 {
+	left: 252px;
+}
+
+.role .role-container ul .p6_6 {
+	left: 315px;
+}
+
+.role .role-container ul .p7_7 {
+	left: 378px;
+}
+
+.role .role-container ul .p8_8 {
+	left:441px;
+}
+
+.role .role-container ul .p1_1 .mp-role{
+	background-image: url("./img/shendao.png");
+}
+
+.role .role-container ul .p2_2 .mp-role{
+	background-image: url("./img/taibai.png");
+}
+
+.role .role-container ul .p3_3 .mp-role{
+	background-image: url("./img/shenwei.png");
+}
+
+.role .role-container ul .p4_4 .mp-role{
+	background-image: url("./img/tangmen.png");
+}
+
+.role .role-container ul .p5_5 .mp-role{
+	background-image: url("./img/gaibang.png");
+}
+
+.role .role-container ul .p6_6 .mp-role{
+	background-image: url("./img/tianxiang.png");
+}
+
+.role .role-container ul .p7_7 .mp-role{
+	background-image: url("./img/zhenwu.png");
+}
+
+.role .role-container ul .p8_8 .mp-role{
+	background-image: url("./img/wudu.png");
+}
+
+.cotpart{clear:both;padding:30px 270px 0 50px;}
+.cotpart h3{height:84px;position:relative;font-size:65px;color:#cfae69;font-weight:bold;line-height:130%;z-index:2;}
+.cotpart h3 .tag{display:block;top:15px;left:140px;width:38px;height:38px;}
+.cotpart .more{margin:20px 0 0;}
+.cotpart .morer{display:inline-block;background:#cfae69;font-size:13px;border-radius:15px;padding:0 15px;line-height:28px;}
+.cotpart .morer:hover{background:#c3a35f;}
+.mp-role{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transition:all .36s ease-out 0s;transition:all .36s ease-out 0s;}
+.mp-role{position:absolute;right:0;bottom:0;height:422px;width:458px;background-repeat:no-repeat;background-position:100% bottom;z-index:1;}
+.mp-tw{position:relative;font-size:112%;color:#2fc3a2;z-index:2;}
+.mp-yw{position:relative;font-size:85.7%;color:#b7b7b7;z-index:2;}
+.mp-level{margin:15px 0 0;}
+.mp-level b{display:block;font-size:107.1%;margin:0 0 3px;color:#fff;font-weight:normal;}
+.mp-level i{display:inline-block;margin:0 8px 0 2px;width:10px;height:10px;font-size:0;line-height:0;border:1px solid #75797c;-webkit-transform:rotateZ(45deg);transform:rotateZ(45deg);}
+.mp-level .has{background-color:#ff8f17;border-color:#e2821a;}
+
+
+
+
+

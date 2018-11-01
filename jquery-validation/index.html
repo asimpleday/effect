@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<title>Document</title>
+	<script>
+	$(function(){
+
+		$("#form").validate({
+			submitHandler:function(){
+				console.log("验证成功~");
+				return true;
+			},
+			invalidHandler:function(event,validator){
+
+				console.log("您有"+validator.numberOfInvalids()+"个选项未通过验证~");
+			},
+		rules:{
+			username:{
+				required:true,
+				rangelength:[2,6]
+			},
+			sex:{
+				required:true
+			},
+			email:{
+				required:true,
+				email:true
+			},
+			"love[]":{
+				required:true
+			},
+			fruit:{
+				required:true
+			},
+			photo:{
+				required:true,
+				extension:"jpg|png|jpeg|gif"
+			},
+			rules:{
+				required:true	
+			}
+
+		},
+		errorClass:"iserror",
+		success:function(label,element){
+			label.addClass("yes");
+			$(element).css("border-color","#000");
+		},
+		errorPlacement:function(error,element){
+			error.appendTo(element.parents(".list"));
+		},
+		messages:{
+			username:{
+				required:"户名必须填写",
+				rangelength:"用户名长度必须在2~6之间"
+			},
+			sex:{
+				required:"请选择您的性别"
+			},
+			email:{
+				required:"请填写您的邮箱",
+				email:"邮箱格式不正确"
+			},
+			"love[]":{
+				required:"请选择一个您的体育爱好"
+			},
+			fruit:{
+				required:"请选择您喜爱的水果"
+			},
+			photo:{
+				required:"请上传您的头像",
+				extension:"请上传指定格式的图片----jpg|png|jpeg|gif"
+			},
+			rules:{
+				required:"请仔细阅读协议后勾选"	
+			}
+		},
+		highlight:function(element,errorClass,vaildClass){
+			$(element).css("border-color","red");
+			$(element).siblings().last().removeClass("yes");	
+		}
+
+	})
+
+	})
+	</script>
+</head>
+<body>
+	<form action="" id="form">
+		<div class="list">
+			<div class="tit">用户名：</div>
+			<input type="text" name="username" class="text">
+		</div>
+		<div class="list clearfix">
+			<div class="tit">性别：</div>
+			<div class="radio">
+				<input type="radio" name="sex"> 男
+			</div>
+			<div class="radio">
+				<input type="radio" name="sex"> 女
+			</div>
+		</div>
+		<div class="list">
+			<div class="tit">邮箱：</div>
+			<input type="text" name="email" class="text">
+		</div>
+		<div class="list">
+			<div class="tit">体育爱好：</div>
+			<input type="checkbox" name="love[]">足球
+			<input type="checkbox" name="love[]">蓝球
+			<input type="checkbox" name="love[]">乒乓球
+			<input type="checkbox" name="love[]">羽毛球
+		</div>
+		<div class="list">
+			<div class="tit">水果爱好：</div>
+			<select name="fruit" id="" multiple="multiple">
+				<option value="橘子">橘子</option>
+				<option value="苹果">苹果</option>
+				<option value="香蕉">香蕉</option>
+				<option value="西瓜">西瓜</option>
+			</select>
+		</div>
+		<div class="list">
+			<div class="tit">头像：</div>
+			<input type="file" name="photo">
+		</div>
+		<div class="list">
+			<div class="tit">注册协议：</div>
+			<input type="checkbox" name="rules">同意
+		</div>
+		<div class="list">
+			<input type="submit" value="提交" name="submit">
+		</div>
+	</form>
+</body>
+</html>

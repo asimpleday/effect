@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+		.banner{
+			width:999px;
+			height:400px;
+			border:#FFD700 solid 1px;
+			margin:100px auto;
+			overflow: hidden;
+		}
+		.img{
+			width:2000px;
+			height:100%;
+		}
+		.img li{
+			width:199px;
+			height:400px;
+			float:left;
+			overflow: hidden;
+		}
+		.img li+li{
+			border-left:#FFD700 solid 1px;;
+		}
+	</style>
+	<script>
+	$(function(){
+		var img_list=$(".banner .img li");
+
+		img_list.hover(function(){
+			$(this).stop().animate({"width":599},500).siblings().stop().animate({"width":99},500);
+		},function(){
+			img_list.stop().animate({"width":199},500);
+		})
+
+
+
+
+	})
+	</script>
+</head>
+<body>
+	<div class="banner">
+		<ul class="img">
+			<li>
+				<a href="javascript:;">
+					<img src="image/11.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="image/22.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="image/33.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="image/44.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="image/55.jpg" alt="" />
+				</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

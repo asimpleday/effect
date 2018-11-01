@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery.js"></script>
+	<title>Document</title>
+</head>
+<style>
+	body{
+		height:3000px;
+	}
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul,ol{
+		list-style: none;
+	}
+	.box{
+		width:700px;
+		height:621px;
+		margin:100px auto 0;
+		position: relative;
+	}
+	.box .imgList{
+		position: relative;
+	}
+	.box .imgList img{
+		width:700px;
+		height:621px;
+		position: absolute;
+		left:0;
+		top:0;
+	}
+	.box .lBtn{
+		position: absolute;
+		top:300px;
+		left:-50px;
+	}
+	.box .rBtn{
+		position: absolute;
+		top:300px;
+		right:-50px;
+	}
+	.box .close{
+		position: absolute;
+		top:0;
+		right:-20px;
+	}
+</style>
+<script>
+	$(function(){
+		var index=5;
+		var darection=0;
+		$(".rBtn").click(function(){
+			if(!$(".imgList img").is(":animated")){
+				index--;
+				if(darection==0){
+					index++;
+				}
+				if(index==-1 || index==5){
+					index=4;
+				}
+				$(".imgList img").eq(index).stop(true,true).animate({"top":-600},1000,function(){
+					$(this).css("z-index",1).siblings("img").css("z-index",function(){
+						return parseInt($(this).css("z-index"))+1
+					});
+				}).animate({"top":0},1000);
+				darection=1;
+			}
+			
+		})
+
+
+		$(".lBtn").click(function(){
+				if(!$(".imgList img").is(":animated")){
+					index++;
+					if(darection==1){
+						index--;
+					}
+					if(index>=5){
+						index=0;
+					}
+
+					$(".imgList img").eq(index).stop(true,true).animate({"top":600},1000,function(){
+						$(this).css("z-index",5).siblings("img").css("z-index",function(){
+							return parseInt($(this).css("z-index"))-1;
+						})
+					}).animate({"top":0},1000);
+					darection=0;
+				}
+				
+		})
+	})
+</script>
+<body>
+	<div class="box">
+		<div class="imgList">
+			<img src="image/picture1.png" alt="" style="z-index:1;">
+			<img src="image/picture2.png" alt="" style="z-index:2;">
+			<img src="image/picture3.png" alt="" style="z-index:3;">
+			<img src="image/picture4.png" alt="" style="z-index:4;">
+			<img src="image/picture5.png" alt="" style="z-index:5;">
+		</div>
+		<a href="javascript:;" class="lBtn">
+			<img src="image/picLeft.png" alt="">
+		</a>
+		<a href="javascript:;" class="rBtn">
+			<img src="image/picRight.png" alt="">
+		</a>
+		<a href="javascript:;" class="close">
+			<img src="image/picClose.png" alt="">
+		</a>
+	</div>
+</body>
+</html>

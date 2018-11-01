@@ -1,0 +1,135 @@
+/* 列表页的样式 */
+.list_container{
+	width: 100%;
+}
+
+.header{
+	width: 100%;
+	height: 45px;
+
+	/* 背景图片 */
+	background-image: url('../images/header-bg.png');
+
+	background-size: 1px 44px;
+	background-repeat: repeat-x;
+
+	position: relative;
+	padding-left: 40px;
+	padding-right: 50px;
+}
+/* header 坐标的a标签 */
+.header a:nth-child(1){
+	line-height: 45px;
+	color: gray;
+	font-size: 35px;
+	font-family: '宋体';
+	position: absolute;
+	left: 10px;
+}
+
+.header input{
+	width: 100%;
+	height: 31px;
+	margin-top: 7px;
+	border-radius: 5px;
+	border: 1px solid #eee;
+}
+
+.header a:nth-child(3){
+	background-image: url('../images/sprites.png');
+	background-size: 200px 200px;
+	background-position: -60px 0;
+	width: 40px;
+	height: 44px;
+	position: absolute;
+	right: 10px;
+	top:0px ;
+
+	/* 将内容 压缩到 20*20 */
+	padding:12px 10px ;
+	
+	/* 设置 背景图 开始的位置 */
+	background-origin: content-box;
+	/* 设置背景图 保留的区域 */
+	background-clip:content-box; 
+}
+
+
+/* 主要内容区域 */
+.main{
+	width: 100%;
+}
+/* 主要内容区域的 左边 */
+.main .main_left{
+	width: 90px;
+}
+.main .main_left ul{
+	width: 100%;
+}
+.main .main_left ul li{
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+
+}
+.main .main_left ul li a{
+	color: black;
+}
+
+.main .main_left ul li.current{
+	border-right: none;
+}
+.main .main_left ul li.current a{
+	color: rgb(201, 21, 35);
+}
+
+/* 右边的区域 */
+.main .main_right{
+	overflow: hidden;
+	/* 顶部 左右 底部为0 */
+	padding: 10px 10px 0;
+	/* width: 100%; */
+}
+
+/* a标签 不要设置 宽度 自适应 */
+.main .main_right .right_banner{
+	display: block;
+	width: 100%;
+}
+.main .main_right .right_banner img{
+	display: block;
+	width: 100%;
+}
+
+.main .main_right h3{
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+/* 右边区域的 列表部分 */
+.main .main_right ul{
+	width: 100%;
+	padding-top: 10px;
+}
+.main .main_right ul li{
+	width: 33.3333%;
+	float: left;
+}
+.main .main_right ul li a{
+	display: block;
+	width: 100%;
+}
+.main .main_right ul li a img{
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+}
+.main .main_right ul li a p{
+	text-align: center;
+	color: black;
+	padding: 4px 0;
+	font-size: 13px;
+}

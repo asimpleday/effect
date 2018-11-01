@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		a{
+			color:#333;
+			text-decoration:none;
+		}
+		.slide{
+			width:960px;
+			margin:50px auto;
+			position: relative;
+		}
+		.slide ul li{
+			display: none;
+		}
+		.slide ul li img{
+			display:block;
+		}
+		.slide ol{
+			position: absolute;
+			right:20px;
+			bottom:20px;
+		}
+		.slide ol li{
+			float:left;
+			margin-left:10px;
+			opacity:0.8;
+			filter:alpha(opacity:80);
+
+		}
+		.slide ol li a{
+			background:skyblue;
+			padding:5px 10px;
+		}
+		.slide ol li.active a{
+			background:orange;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+		 slide();
+		 timer=setInterval(autoSlide,2000);
+
+	}
+	var num=0;
+	var alpha=0;
+	var timer=null;
+	var timer2=null;
+
+
+	//自动播放的函数
+	function autoSlide(){
+		var img=document.getElementById("img_list").getElementsByTagName("li");
+		var btn=document.getElementById("btn").getElementsByTagName("li");
+		for(var i=0;i<img.length;i++){
+			if(i==num){
+				img[i].style.display="block";
+				startAlpha(img[i],100)
+				btn[i].className="active";	
+			}else{
+				img[i].style.display="none";
+				btn[i].className="";
+			}
+		}
+		num++;
+		if(num==img.length){
+			num=0;
+		}
+	}
+
+
+	function slide(){
+		var box=document.getElementById("slide");
+		var img=document.getElementById("img_list").getElementsByTagName("li");
+		var btn=document.getElementById("btn").getElementsByTagName("li");
+		//手动控制播放
+		for(var i=0;i<btn.length;i++){
+			btn[i].index=i;
+			btn[i].onclick=function(){
+				for(var j=0;j<btn.length;j++){
+					img[j].style.display="none";
+					btn[j].className="";
+				}
+			img[this.index].style.display="block";
+			startAlpha(img[this.index],100)
+			this.className="active";
+			num=this.index;
+			}
+		}
+		box.onmouseover=function(){
+			clearInterval(timer);
+		}
+		box.onmouseout=function(){
+			clearInterval(timer);
+			timer=setInterval(autoSlide,1000);
+		}
+	}
+
+	// 透明度变化
+	
+	
+	function startAlpha(obj,target){
+		clearInterval(timer2);
+		var speed=0;
+		timer2=setInterval(function(){
+			if(speed<target){
+				speed=10;
+			}else{
+				speed=-10;
+			}
+
+			if(alpha==100){
+				clearInterval(timer2);
+				alpha=0;
+
+			}else{
+				alpha+=speed;
+				obj.style.opacity=alpha/100;
+				obj.style.filter="alpha(opacity:"+alpha+")";
+			}
+		},50)
+
+	}
+	</script>
+</head>
+<body>
+	<div class="slide" id="slide">
+		<ul id="img_list">
+			<li style="display:block;">
+				<a href="javascript:;"><img src="image/1.jpg" height="600" width="960" alt=""></a>
+			</li>
+			<li>
+				<a href="javascript:;"><img src="image/2.jpg" height="600" width="960" alt=""></a>
+			</li>
+			<li>
+				<a href="javascript:;"><img src="image/3.jpg" height="600" width="960" alt=""></a>
+			</li>
+			<li>
+				<a href="javascript:;"><img src="image/4.jpg" height="600" width="960" alt=""></a>
+			</li>
+			<li>
+				<a href="javascript:;"><img src="image/5.jpg" height="600" width="960" alt=""></a>
+			</li>	
+		</ul>
+		<ol id="btn">
+			<li class="active"><a href="javascript:;">1</a></li>
+			<li><a href="javascript:;">2</a></li>
+			<li><a href="javascript:;">3</a></li>
+			<li><a href="javascript:;">4</a></li>
+			<li><a href="javascript:;">5</a></li>
+		</ol>
+	</div>
+</body>
+</html>

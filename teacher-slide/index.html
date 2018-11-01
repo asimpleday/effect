@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script type="text/javascript" src="http://www.xftz.cn/templets/yuanyou/js/jquery-1.12.1.min.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" charset="GBK"/>
+<title>无标题文档</title>
+<script>
+	$(function(){
+		
+		var btn_l=$(".btn_l");
+		var btn_r=$(".btn_r");
+		var changci=$(".changci_in");
+		var fxs=$(".fxs_ul");
+		var num=0;
+		
+		
+		var changci_copy=changci.children().clone(true);   //场次内容复制并添加
+		changci.append(changci_copy);
+		var changci_width=changci.children().length*changci.children().width();   //计算设置场次ul的宽
+		changci.width(changci_width);
+		var fxs_copy=fxs.children().clone(true);   //分析师内容复制并添加
+		fxs.append(fxs_copy);
+		var fxs_width=fxs.children().length*(fxs.children().width()+4);  //计算设置分析师ul的宽
+		fxs.width(fxs_width);
+		var speed=500;     //速度
+		var cc_li=changci.children().width(); 
+		var fxs_li=fxs.children().width()+4;
+		btn_l.click(function(){   //右滑动
+			num--;
+			if(num<0){
+				num=2;
+				changci.css("left",-cc_li*3);
+				fxs.css("left",- fxs_li*9);
+				}
+			var changci_l=num*-cc_li;
+			var fxs_l=num*- fxs_li*3;
+			changci.stop().animate({left:changci_l},speed);
+			fxs.stop().animate({left:fxs_l},speed);
+			});
+		btn_r.click(function(){   	//左滑动
+			num++;
+			if(num>3){
+				num=1;
+				changci.css("left",0);
+				fxs.css("left",0);
+				}
+			var changci_l=num*-cc_li;
+			var fxs_l=num*- fxs_li*3;
+			changci.stop().animate({left:changci_l},speed);
+			fxs.stop().animate({left:fxs_l},speed);
+			});
+			
+		})
+</script>
+</head>
+
+<body>
+	<div class="wply">
+    	<div class="title">
+        	<div class="title_in">
+            	<i class="icon"></i>
+            	<a href="javascript:;">微盘路演</a>
+            </div>
+        </div>
+        <div class="ly_time">
+        	<a href="javascript:;" class="btn btn_l"></a>
+            <div class="changci">
+            	<ol class="changci_in">
+                	<li class="cont">
+                        <p class="sw">上午场</p>
+                        <p class="time">9:00-12:00</p>
+                    </li>
+                    <li class="cont">
+                        <p class="sw">下午场</p>
+                        <p class="time">13:30-17:30</p>
+                    </li>
+                    <li class="cont">
+                        <p class="sw">晚上场</p>
+                        <p class="time">19:00-24:00</p>
+                    </li>
+                </ol>
+            </div>
+            <a href="javascript:;" class="btn btn_r"></a>
+        </div>
+        <div class="ly_fxs">
+        	<ul class="fxs_ul">
+            	<li>
+                
+                	<a href="javascript:;"><img src="image/fxs_01.jpg" /></a>
+                    <p><a href="javascript:;" class="fxs_name">魏志宇1</a></p>
+                </li>
+                <li>
+                	<a href="javascript:;"><img src="image/fxs_02.jpg" /></a>
+                    <p><a href="javascript:;" class="fxs_name">顾峰1</a></p>
+                </li>
+                <li class="last">
+                	<a href="javascript:;"><img src="image/fxs_03.jpg" /></a>
+                    <p><a href="javascript:;" class="fxs_name">李伟1</a></p>
+                </li>
+                <li>
+                	<a href="javascript:;"><img src="image/fxs_01.jpg" /></a>
+                    <p><a href="javascript:;" class="fxs_name">魏志宇2</a></p>
+                </li>
+                <li>
+                	<a href="javascript:;"><img src="image/fxs_02.jpg" /></a>
+                    <p><a href="javascript:;" class="fxs_name">顾峰2</a></p>
+                </li>
+                <li class="last">
+                	<a href="javascript:;"><img src="image/fxs_03.jpg" /></a>
+                    <p><a href="javascript:;" class="fxs_name">李伟2</a></p>
+                </li>
+                <li>
+                	<a href="javascript:;"><img src="image/fxs_01.jpg" /></a>
+                    <p><a href="javascript:;" class="fxs_name">魏志宇3</a></p>
+                </li>
+                <li>
+                	<a href="javascript:;"><img src="image/fxs_02.jpg" /></a>
+                    <p><a href="javascript:;" class="fxs_name">顾峰3</a></p>
+                </li>
+                <li class="last">
+                	<a href="javascript:;"><img src="image/fxs_03.jpg" /></a>
+                    <p><a href="javascript:;" class="fxs_name">李伟3</a></p>
+                </li>
+            </ul>
+        </div>
+        <p class="mf">三位分析师同时免费在线解答</p>
+    </div>
+</body>
+</html>

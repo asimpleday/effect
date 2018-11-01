@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.clearfix:after{
+  content: "020"; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;  
+  }
+#form{
+	width: 1000px;
+	height: 500px;
+	border:#000 solid 1px;
+	margin:100px auto;
+	padding:60px 0 0 40px;
+}
+#form .list{
+	margin-bottom: 20px;
+}
+#form .list .tit{
+	width:100px;
+	float:left;
+}
+#form .list input.text{
+	width: 300px;
+	height:20px;
+	outline-style:none; 
+	border:#000 solid 1px;
+}
+#form .list .radio{
+	float:left;
+	margin-right:10px;
+}
+label.iserror{
+	padding-left:50px;
+	background:url(../image/error.jpg) no-repeat 30px center;
+}
+label.iserror.yes{
+	padding-left:50px;
+	background:url(../image/yes.png) no-repeat 30px center;
+}

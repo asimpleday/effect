@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://www.xftz.cn/templets/yuanyou/js/jquery-1.12.1.min.js"></script>
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+		img{
+			display: block;
+			margin:0 auto;
+		}
+		.dt{
+			width:30px;
+			font-size: 12px;
+			position:fixed;
+			left:50%;
+			margin-left: -655px;
+			top:50%;
+			margin-top:-70px;
+			cursor:pointer;
+			font-family: Microsoft Yahei;
+			display: none;
+		}
+		.dt li{
+			border-bottom: dotted #999 1px;
+			width:30px;
+			height:29px;
+			text-align: center;
+			line-height: 29px;
+			position:relative; 
+		}
+		.dt li div{
+			position:absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			display: none;
+			background: #fff;
+			color: #C81624;
+		}
+		.dt li:hover div{
+			display: block;
+			background:#C81624;
+			color:#fff;
+		}
+		.dt li.current div{
+			display: block;
+		}
+	</style>
+	<script>
+	$(function(){
+		var dt=$(".dt");
+		var dtli=dt.children();
+		var f1top=$(".f1").offset().top-120;
+		var f2top=$(".f2").offset().top-120;
+		var f3top=$(".f3").offset().top-120;
+		var f4top=$(".f4").offset().top-120;
+		var f5top=$(".f5").offset().top-120;
+		$(window).scroll(function(e){
+			var scrT=$(this).scrollTop();
+			if(scrT>f1top){
+				dt.show();
+			}else{
+				dt.hide();
+			}
+			if(scrT>=f5top){
+				dtli.eq(4).addClass("current").siblings("li").removeClass("current");
+			}else if(scrT>=f4top){
+				dtli.eq(3).addClass("current").siblings("li").removeClass("current");
+			}else if(scrT>=f3top){
+				dtli.eq(2).addClass("current").siblings("li").removeClass("current");
+			}else if(scrT>=f2top){
+				dtli.eq(1).addClass("current").siblings("li").removeClass("current");
+			}else if(scrT>=f1top){
+				dtli.eq(0).addClass("current").siblings("li").removeClass("current");
+			}
+		})
+
+		dtli.click(function(){
+			$(window).off("scroll");
+			var i=$(this).index();
+			$(this).addClass("current").siblings().removeClass("current");
+			if(i==0){
+				$("html,body").animate({
+					scrollTop:f1top+120
+				},500)
+			}else if(i==1){
+				$("html,body").animate({
+					scrollTop:f2top+120
+				},500)
+			}else if(i==2){
+				$("html,body").animate({
+					scrollTop:f3top+120
+				},500)
+			}else if(i==3){
+				$("html,body").animate({
+					scrollTop:f4top+120
+				},500)
+			}else if(i==4){
+				$("html,body").animate({
+					scrollTop:f5top+120
+				},500)
+			}
+		})
+
+	})
+	</script>
+</head>
+<body>
+	<img src="image/main.jpg" height="1725" width="1210" alt="">
+	<img src="image/f1.jpg" height="767" width="1210" alt="" class="f1">
+	<img src="image/f2.jpg" height="767" width="1210" alt="" class="f2">
+	<img src="image/f3.jpg" height="767" width="1210" alt="" class="f3">
+	<img src="image/f4.jpg" height="767" width="1210" alt="" class="f4">
+	<img src="image/f5.jpg" height="767" width="1210" alt="" class="f5">
+	<ul class="dt">
+		<li class="current">
+			1F
+			<div>服饰</div>
+		</li>
+		<li>
+			2F
+			<div>美妆</div>
+		</li>
+		<li>
+			3F
+			<div>手机</div>
+		</li>
+		<li>
+			4F
+			<div>家电</div>
+		</li>
+		<li>
+			5F
+			<div>数码</div>
+		</li>
+	</ul>
+</body>
+</html>

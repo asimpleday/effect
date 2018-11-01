@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script type="text/javascript" src="http://www.xftz.cn/templets/yuanyou/js/jquery-1.12.1.min.js"></script>
+<script>
+	$(function(){
+		var aLi=$(".pk ul li");
+		aLi.hover(function(){
+			var index=$(this).index();
+			
+			$(".pk li").each(function(i){
+				if(index==i){
+					$(this).children("a").css("background-image","url(image/pk0"+(i+1)+(i+1)+".png");
+				}else{
+					$(".pk li a").eq(i).css("background-image","url(image/pk0"+(i+1)+".png");
+				}
+
+			})
+		})
+	})
+</script>
+<title>无标题文档</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+		list-style:none;
+		}
+	.pk{
+		width: 100%;
+		background: url(http://www.xinhuanet.com/world/2016meidaxuan/images/bg_pk1021.jpg) no-repeat 50% 0;
+		height: 1311px;
+	}
+	.pk ul {
+		width: 1000px;
+		margin: 0 auto;
+		padding-top: 450px;
+	}
+	.pk ul li {
+    	margin: 15px 0;
+	}
+	.pk ul .pk1 a {
+		background: url(image/pk01.png) no-repeat;
+		height: 70px;
+		display: block;
+	}
+	.pk ul .pk2 a {
+		background: url(image/pk02.png) no-repeat;
+		height: 50px;
+		display: block;
+	}
+	.pk ul .pk3 a {
+		background: url(image/pk03.png) no-repeat;
+		height: 60px;
+		display: block;
+	}
+	.pk ul .pk4 a {
+		background:url(image/pk04.png) no-repeat;
+		height: 48px;
+		display: block;
+	}
+	.pk ul .pk5 a {
+		background:url(image/pk05.png) no-repeat;
+		height: 123px;
+		display: block;
+	}
+	.pk ul .pk6 a {
+		background:url(image/pk06.png) no-repeat;
+		height: 48px;
+		display: block;
+	}
+	.pk ul .pk7 a {
+		background:url(image/pk07.png) no-repeat;
+		height: 48px;
+		display: block;
+	}
+	.pk ul .pk8 a {
+		background:url(image/pk08.png) no-repeat;
+		height: 48px;
+		display: block;
+	}
+	.pk ul .pk9 a {
+		background:url(image/pk09.png) no-repeat;
+		height: 140px;
+		display: block;
+	}
+</style>
+</head>
+
+<body>
+
+
+<div class="pk">
+    <ul>
+        <li class="pk1"><a></a></li>
+        <li class="pk2"><a></a></li>
+        <li class="pk3"><a></a></li>
+        <li class="pk4"><a></a></li>
+        <li class="pk5"><a></a></li>
+        <li class="pk6"><a></a></li>
+        <li class="pk7"><a></a></li>
+        <li class="pk8"><a></a></li>
+        <li class="pk9"><a></a></li>
+    </ul>
+</div>
+</body>
+</html>

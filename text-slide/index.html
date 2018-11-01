@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		list-style:none;
+		}
+	#div1{
+		width:1000px;
+		height:50px;
+		line-height:50px;
+		margin:100px auto;
+		border:#000 solid 1px;
+		white-space:nowrap;
+		overflow:hidden;
+		}
+	a{
+		color:#333;
+		text-decoration:none;
+		}
+</style>
+<script type="text/javascript">
+	var div1,div2,div3,timer;
+	function init(){
+		div1=getid('div1');
+		div2=getid('div2');
+		div3=getid('div3');
+		div4=getid('div4');
+		div3.innerHTML=div2.innerHTML;
+		timer=setInterval(mar,15);
+		}
+		function mar(){
+			if(div2.offsetWidth<=div1.scrollLeft){
+					div1.scrollLeft-=div2.offsetWidth;
+					}else{						
+						div1.scrollLeft++;
+						}
+			//div4.innerHTML=div1.scrollLeft;
+			div4.innerHTML=div3.offsetWidth;			
+			}
+	function getid(id){
+		return document.getElementById(id);
+		}
+	window.onload=init;
+</script>
+</head>
+
+<body>
+	<div id="div1" onmouseover="clearInterval(timer)" onmouseout="timer=setInterval(mar,15);" >
+    	<span id="div2">
+        	<a href="javascript:;">1.港媒评中国高铁海外遇挫：质量和沟通是关键</a>
+            <a href="javascript:;">2.达沃斯|李克强：中国将推进对企业的大规模减税</a>
+            <a href="javascript:;">3.中央调减京津沪耕地保护指标 用地腾挪空间变大？</a>
+            <a href="javascript:;">4.港媒评中国高铁海外遇挫：质量和沟通是关键</a>
+            <a href="javascript:;">5.炒新做熟造就7月局部热 放量普涨是否翻身前奏</a>
+            <a href="javascript:;">6.沪港通扩容迫在眉睫 深港通启动预期升温</a>
+        </span>
+        <span id="div3">
+        </span>
+    </div>
+    <div id="div4">0</div>
+</body>
+</html>

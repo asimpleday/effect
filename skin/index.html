@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<title>网页换皮肤</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color:#333;
+		}
+		.clear{
+			clear:both;
+		}
+		.body1{
+			background: url(image/0/body_bg/1.jpg) no-repeat center top;
+		}
+		.content{
+			width:1000px;
+			margin:50px auto 0;
+		}
+		.content .header ul li{
+			float: left;
+			padding:5px 10px;
+			border:#ccc solid 1px;
+			margin-right: 20px;
+		}
+		.content .header ul li.active{
+			background: skyblue;
+		}
+
+		.content .main{
+			margin-top:20px;
+		}
+		.content .main .shili{
+			float: left;
+		}
+		.content .main .shili .item{
+			display: none;
+		}
+		.content .main .shili .item.active{
+			display: block;
+		}
+		.content .main .shili .item ul li{
+			float: left;
+			margin-right:20px;
+			cursor: pointer;
+		}
+		.content .zhanshi{
+			float: right;
+			position: relative;
+		}
+		.content .zhanshi img{
+			width:295px;
+			height:220px;
+		}
+		.content .zhanshi span{
+			position: absolute;
+			top:14px;
+			left:57px;
+			width:182px;
+			height:207px;
+			background: url(image/grid.png);
+
+		}
+	</style>
+	<script>
+	$(function(){
+		var imgList={
+			0:{
+				body_bg:{
+					0:"url(image/0/body_bg/1.jpg)",
+					1:"url(image/0/body_bg/2.jpg)",
+					2:"url(image/0/body_bg/3.jpg)"
+				},
+				zhanshi:{
+					0:"image/0/zhanshi/1.jpg",
+					1:"image/0/zhanshi/2.jpg",
+					2:"image/0/zhanshi/3.jpg"
+				}
+			},
+			1:{
+				body_bg:{
+					0:"url(image/1/body_bg/1.jpg)",
+					1:"url(image/1/body_bg/2.jpg)",
+					2:"url(image/1/body_bg/3.jpg)"
+				},
+				zhanshi:{
+					0:"image/1/zhanshi/1.jpg",
+					1:"image/1/zhanshi/2.jpg",
+					2:"image/1/zhanshi/3.jpg"
+				}
+			},
+			2:{
+				body_bg:{
+					0:"url(image/2/body_bg/1.jpg)",
+					1:"url(image/2/body_bg/2.jpg)"
+				},
+				zhanshi:{
+					0:"image/2/zhanshi/1.jpg",
+					1:"image/2/zhanshi/2.jpg"
+				}
+			}
+		}
+		var index=0;
+		$(".header li").click(function(){
+			index=$(this).index();
+			$(".main .item").eq(index).show().siblings().hide();
+			$(this).addClass("active").siblings("li").removeClass("active");
+			
+		})
+		$(".item li").click(function(){
+				var index2=$(this).index();
+				$(".body1").css("background-image",imgList[index]["body_bg"][index2]);
+				$(".zhanshi img").attr("src",imgList[index]["zhanshi"][index2]);
+		})
+
+
+	})
+	</script>
+</head>
+<body class="body1">
+	<div class="content">
+		<div class="header">
+			<ul>
+				<li class="active"><a href="javascript:;">卡通</a></li>
+				<li><a href="javascript:;">护眼</a></li>
+				<li><a href="javascript:;">中国风</a></li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+		<div class="main">
+			<div class="shili">
+				<div class="item active">
+					<ul>
+						<li><img src="image/0/thumb/1.jpg" alt=""></li>
+						<li><img src="image/0/thumb/2.jpg" alt=""></li>
+						<li><img src="image/0/thumb/3.jpg" alt=""></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="image/1/thumb/1.jpg" alt=""></li>
+						<li><img src="image/1/thumb/2.jpg" alt=""></li>
+						<li><img src="image/1/thumb/3.jpg" alt=""></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="image/2/thumb/1.jpg" alt=""></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</div>
+			<div class="zhanshi">
+				<img src="image/0/zhanshi/1.jpg" alt="">
+				<span class="grid"></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

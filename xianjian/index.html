@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+			list-style:none;
+		}
+		.banner{
+			width:100%;
+			height:332px;
+			background: url(image/big.jpg) no-repeat top center;
+			margin: 100px 0;
+			position: relative;
+		}
+		.banner .people{
+			width:1000px;
+			height:330px;
+			margin:0 auto;
+			position: relative;
+		}
+		.banner ul{
+			position: absolute;
+			top:15px;
+			left:10px;
+		}
+		.banner ul li{
+			float: left;
+		}
+		.banner ul li.right{
+			margin-right:5px;
+		}
+		.banner ul li.left{
+			margin-left:5px;
+		}
+		.banner li.three{
+			margin-right:500px;
+		}	
+		.banner ul li a{
+			float: left;
+			width: 75px;
+			height: 181px;
+			background: url(image/figure.png) no-repeat;
+		}
+		.banner ul li a.pic1{
+			background-position: -2px -3px;
+		}
+		.banner ul li a.pic2{
+			background-position: -81px -3px;
+		}
+		.banner ul li a.pic3{
+			background-position: -160px -3px;
+		}
+		.banner ul li a.pic4{
+			background-position: -239px -3px;
+		}
+		.banner ul li a.pic5{
+			background-position: -318px -3px;
+		}
+		.banner ul li a.pic6{
+			background-position: -397px -3px;
+		}
+		.banner ul li a.pic1:hover{
+			background-position: -2px -199px;
+		}
+		.banner ul li a.pic2:hover{
+			background-position: -81px -199px;
+		}
+		.banner ul li a.pic3:hover{
+			background-position: -160px -199px;
+		}
+		.banner ul li a.pic4:hover{
+			background-position: -239px -199px;
+		}
+		.banner ul li a.pic5:hover{
+			background-position: -319px -199px;
+		}
+		.banner ul li a.pic6:hover{
+			background-position: -397px -199px;
+		}
+		.banner ul li a.pic6{
+			background-position: -397px -3px;
+		}
+		.banner ul li a.r1{
+			background-position: -2px -199px;
+		}
+		.banner ul li a.r2{
+			background-position: -81px -199px;
+		}
+		.banner ul li a.r3{
+			background-position: -160px -199px;
+		}
+		.banner ul li a.r4{
+			background-position: -239px -199px;
+		}
+		.banner ul li a.r5{
+			background-position: -319px -199px;
+		}
+		.banner ul li a.r6{
+			background-position: -397px -199px;
+		}
+	</style>
+	<script type="text/javascript" src="http://www.xftz.cn/templets/yuanyou/js/jquery-1.12.1.min.js"></script>
+	<script>
+	$(function(){
+		$(".list li").click(function(){
+			var index=$(this).index();
+			$(".list li").each(function(i){
+				if(index==i){
+					$(this).children("a").addClass("r"+(i+1));
+				}else{
+					$(".list li").eq(i).children("a").removeClass("r"+(i+1));	
+				}
+			$(".plo").attr("src","image/"+"big"+(index+1)+".jpg");
+
+			})
+		})
+	})
+	</script>
+</head>
+<body>
+	<div class="banner">
+		<div class="people">
+			<img src="image/big1.jpg" height="330" width="1000" alt="" class="plo" style="display:block;">
+			<ul class="list">
+				<li class="right"><a href="javascript:;" class="pic1 r1" id="d1"></a></li>
+				<li class="right"><a href="javascript:;" class="pic2" id="d2"></a></li>
+				<li class="three"><a href="javascript:;" class="pic3" id="d3"></a></li>
+				<li class="left"><a href="javascript:;" class="pic4" id="d4"></a></li>
+				<li class="left"><a href="javascript:;" class="pic5" id="d5"></a></li>
+				<li class="left"><a href="javascript:;" class="pic6" id="d6"></a></li>
+			</ul>
+		</div>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script>
+	$(function(){
+		var li=$(".box .content ul li:lt(8)");
+		var rw=$(".box .content ul li:last");
+		var mx=$(".mx");
+		li.hover(function(){
+			var i=$(this).index();
+			"+(i+1)+"
+			mx.eq(i).addClass("current").siblings().removeClass("current");
+			rw.removeClass().addClass("cur p"+(i+1)+"_"+(i+1)+"");
+			$(".box .content ul li[class^=p]:gt("+i+")").each(function(index,element){
+				$(this).css("left",(i+index)*63+559+"px");
+
+			})
+			$(".box .content ul li[class^=p]:lt("+i+")").each(function(index,element){
+				$(this).css("left",index*63+"px");
+
+			})
+
+
+
+		})
+	})
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		<div class="content">
+			<h2>
+				<i>RECOMMAND</i>
+				八荒门派<span>各有主张</span>
+			</h2>
+			<ul>
+				<li class="p1">
+					<a href="javascript:;">
+						<img src="img/shendao.jpg" alt="">
+					</a>
+				</li>
+				<li class="p2">
+					<a href="javascript:;">
+						<img src="img/taibai.jpg" alt="">
+					</a>
+				</li>
+				<li class="p3">
+					<a href="javascript:;">
+						<img src="img/shenwei.jpg" alt="">
+					</a>
+				</li>
+				<li class="p4">
+					<a href="javascript:;">
+						<img src="img/tangmen.jpg" alt="">
+					</a>
+				</li>
+				<li class="p5">
+					<a href="javascript:;">
+						<img src="img/gaibang.jpg" alt="">
+					</a>
+				</li>
+				<li class="p6">
+					<a href="javascript:;">
+						<img src="img/tianxiang.jpg" alt="">
+					</a>
+				</li>
+				<li class="p7">
+					<a href="javascript:;">
+						<img src="img/zhenwu.jpg" alt="">
+					</a>
+				</li>
+				<li class="p8">
+					<a href="javascript:;">
+						<img src="img/gaibang.jpg" alt="">
+					</a>
+				</li>
+				<li class="cur p1_1">
+					<div class="mx current">
+						<h3>神刀</h3>
+						<p class="td">刀含杀气腾幽朔，萧飒寒芒泣鬼神</p>
+						<p class="xx">长刀掠世，雄鹰相随，勇者初心无惧，仁者自可无敌。神刀乃傅红雪叶开所在之门派，江湖中第一用刀之门派，亦是八荒中最为特立独行、潇洒率性之门派...</p>
+						<p class="cznd">
+							<b>操作难度</b>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i class="kong"></i>
+						</p>
+						<div class="rw"></div>
+					</div>
+
+					<div class="mx">
+						<h3>太白</h3>
+						<p class="td">刀含杀气腾幽朔，萧飒寒芒泣鬼神</p>
+						<p class="xx">长刀掠世，雄鹰相随，勇者初心无惧，仁者自可无敌。神刀乃傅红雪叶开所在之门派，江湖中第一用刀之门派，亦是八荒中最为特立独行、潇洒率性之门派...</p>
+						<p class="cznd">
+							<b>操作难度</b>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i class="kong"></i>
+						</p>
+						<div class="rw"></div>
+					</div>
+					<div class="mx">
+						<h3>神威</h3>
+						<p class="td">刀含杀气腾幽朔，萧飒寒芒泣鬼神</p>
+						<p class="xx">长刀掠世，雄鹰相随，勇者初心无惧，仁者自可无敌。神刀乃傅红雪叶开所在之门派，江湖中第一用刀之门派，亦是八荒中最为特立独行、潇洒率性之门派...</p>
+						<p class="cznd">
+							<b>操作难度</b>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i class="kong"></i>
+						</p>
+						<div class="rw"></div>
+					</div>
+					<div class="mx">
+						<h3>唐门</h3>
+						<p class="td">刀含杀气腾幽朔，萧飒寒芒泣鬼神</p>
+						<p class="xx">长刀掠世，雄鹰相随，勇者初心无惧，仁者自可无敌。神刀乃傅红雪叶开所在之门派，江湖中第一用刀之门派，亦是八荒中最为特立独行、潇洒率性之门派...</p>
+						<p class="cznd">
+							<b>操作难度</b>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i class="kong"></i>
+						</p>
+						<div class="rw"></div>
+					</div>
+					<div class="mx">
+						<h3>五毒</h3>
+						<p class="td">刀含杀气腾幽朔，萧飒寒芒泣鬼神</p>
+						<p class="xx">长刀掠世，雄鹰相随，勇者初心无惧，仁者自可无敌。神刀乃傅红雪叶开所在之门派，江湖中第一用刀之门派，亦是八荒中最为特立独行、潇洒率性之门派...</p>
+						<p class="cznd">
+							<b>操作难度</b>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i class="kong"></i>
+						</p>
+						<div class="rw"></div>
+					</div>
+					<div class="mx">
+						<h3>天香</h3>
+						<p class="td">刀含杀气腾幽朔，萧飒寒芒泣鬼神</p>
+						<p class="xx">长刀掠世，雄鹰相随，勇者初心无惧，仁者自可无敌。神刀乃傅红雪叶开所在之门派，江湖中第一用刀之门派，亦是八荒中最为特立独行、潇洒率性之门派...</p>
+						<p class="cznd">
+							<b>操作难度</b>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i class="kong"></i>
+						</p>
+						<div class="rw"></div>
+					</div>
+					<div class="mx">
+						<h3>真武</h3>
+						<p class="td">刀含杀气腾幽朔，萧飒寒芒泣鬼神</p>
+						<p class="xx">长刀掠世，雄鹰相随，勇者初心无惧，仁者自可无敌。神刀乃傅红雪叶开所在之门派，江湖中第一用刀之门派，亦是八荒中最为特立独行、潇洒率性之门派...</p>
+						<p class="cznd">
+							<b>操作难度</b>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i class="kong"></i>
+						</p>
+						<div class="rw"></div>
+					</div>
+					<div class="mx">
+						<h3>丐帮</h3>
+						<p class="td">刀含杀气腾幽朔，萧飒寒芒泣鬼神</p>
+						<p class="xx">长刀掠世，雄鹰相随，勇者初心无惧，仁者自可无敌。神刀乃傅红雪叶开所在之门派，江湖中第一用刀之门派，亦是八荒中最为特立独行、潇洒率性之门派...</p>
+						<p class="cznd">
+							<b>操作难度</b>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i class="kong"></i>
+						</p>
+						<div class="rw"></div>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		table{
+			border-collapse: collapse;
+			width:800px;
+			margin:100px auto;
+		}
+		tr{
+			border-bottom:#ccc solid 1px;
+		}
+		td{
+			padding:10px;
+
+		}
+		a{
+			text-decoration: none;
+		}
+		.active{
+			color:gold;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>
+	$(function(){
+		var table=$("table");
+		var up=$("table tr td:nth-child(3)");
+		var down=$("table tr td:nth-child(4)");
+		var ding=$("table tr td:nth-child(5)");
+		
+		up.click(function(){
+			var tr=$(this).parents("tr");
+			tr.fadeOut().fadeIn();
+			tr.prev().before(tr).end().addClass("active").siblings("tr").removeClass("active");
+		})
+
+		down.click(function(){
+			var tr=$(this).parents("tr");
+			tr.fadeOut().fadeIn();
+			tr.next().after(tr).end().addClass("active").siblings("tr").removeClass("active");
+		})
+
+		ding.click(function(){
+			var tr=$(this).parents("tr");
+			tr.fadeOut().fadeIn();
+			table.prepend(tr);
+			tr.addClass("active").siblings("tr").removeClass("active")
+		})
+
+
+
+
+
+	})
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>2016微博之夜红毯：网红气质不输明星</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;">上移</a></td>
+			<td><a href="javascript:;">下移</a></td>
+			<td><a href="javascript:;">置顶</a></td>
+		</tr>
+		<tr>
+			<td>五小时！魔兽世界英雄难度古尔丹首杀诞生</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;">上移</a></td>
+			<td><a href="javascript:;">下移</a></td>
+			<td><a href="javascript:;">置顶</a></td>
+		</tr>
+		<tr>
+			<td>海滩上现大量"免费大餐" 当地民众纷纷将其大卸八块(1)</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;">上移</a></td>
+			<td><a href="javascript:;">下移</a></td>
+			<td><a href="javascript:;">置顶</a></td>
+		</tr>
+		<tr>
+			<td>时光挖挖哇 | 古人逆天发明：一个比一个牛</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;">上移</a></td>
+			<td><a href="javascript:;">下移</a></td>
+			<td><a href="javascript:;">置顶</a></td>
+		</tr>
+		<tr>
+			<td>外国美女警花变成健身教练 她凭借的是颜值更是身材</td>
+			<td>2016-5-10</td>
+			<td><a href="javascript:;">上移</a></td>
+			<td><a href="javascript:;">下移</a></td>
+			<td><a href="javascript:;">置顶</a></td>
+		</tr>
+	</table>
+</body>
+</html>

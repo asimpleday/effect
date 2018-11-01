@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width:512px;
+			height:512px;
+			margin:100px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		.box #mi{
+			width:100%;
+			height:1470px;
+			position: absolute;
+			top:0;
+			left:0;
+		}
+		.box span{
+			width:100%;
+			height:50%;
+			position: absolute;
+			left:0;
+		}
+		.box span#up{
+			top:0;
+		}
+		.box span#down{
+			bottom:0;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+		var mi=document.getElementById("mi");
+		var up=document.getElementById("up");
+		var down=document.getElementById("down");
+		var num=0;
+		var timer;
+
+		//往上滚动
+		up.onmouseover=function(){
+			clearInterval(timer)
+			function shang(){
+				num-=2;
+				num<=-(mi.clientHeight-mi.parentNode.clientHeight)?clearInterval(timer):mi.style.top=num+"px";
+			}
+			timer=setInterval(shang,20)
+		}
+
+
+
+		//往下滚动
+		down.onmouseover=function(){
+			clearInterval(timer)
+			function xia(){
+				num+=2;
+				num>=0?clearInterval(timer):mi.style.top=num+"px";
+			}
+			timer=setInterval(xia,20)
+		}
+
+		//离开盒子停止
+		mi.parentNode.onmouseout=function(){clearInterval(timer)};
+
+
+
+
+	}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<img src="image/mi.png" alt="" id="mi">
+		<span id="up"></span>
+		<span id="down"></span>
+	</div>
+</body>
+</html>
