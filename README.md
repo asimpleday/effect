@@ -29,9 +29,10 @@
 - jzwl  &nbsp;&nbsp;———— &nbsp;&nbsp;决战武林
 - jyzj  &nbsp;&nbsp;———— &nbsp;&nbsp;九阴真经门派介绍
 - jqzoom  &nbsp;&nbsp;———— &nbsp;&nbsp;图片放大镜
+- mobile  &nbsp;&nbsp;———— &nbsp;&nbsp;移动端rem布局模板
 
 ## 查看
-https://victorxlj.github.io/effect/xiaomi-up-down-slide/
+https://asimpleday.github.io/effect/xiaomi-up-down-slide/
 
 
 
