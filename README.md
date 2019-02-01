@@ -28,6 +28,7 @@
 - people-change  &nbsp;&nbsp;———— &nbsp;&nbsp;天涯明月刀人物切换
 - jzwl  &nbsp;&nbsp;———— &nbsp;&nbsp;决战武林
 - jyzj  &nbsp;&nbsp;———— &nbsp;&nbsp;九阴真经门派介绍
+- jqzoom  &nbsp;&nbsp;———— &nbsp;&nbsp;图片放大镜
 
 ## 查看
 https://victorxlj.github.io/effect/xiaomi-up-down-slide/
