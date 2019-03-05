@@ -30,6 +30,7 @@
 - jyzj  &nbsp;&nbsp;———— &nbsp;&nbsp;九阴真经门派介绍
 - jqzoom  &nbsp;&nbsp;———— &nbsp;&nbsp;图片放大镜
 - mobile  &nbsp;&nbsp;———— &nbsp;&nbsp;移动端rem布局模板
+- fullPage  ————   fullPage轮播滚动页
 
 ## 查看
 https://asimpleday.github.io/effect/xiaomi-up-down-slide/
