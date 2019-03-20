@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #f5f5d5;
+        background: url("http://www.ruanyifeng.com/images_pub/pub_23.jpg") no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+        text-align: center;
+        padding-top: 100px;
+        font-size: 18px;
+        line-height: 3;
+        color: #fff;
+        font-family: "Adobe 仿宋 Std R";
+    }
+    p{
+        background-color: rgba(0, 0, 0, .4);
+    }
+</style>
+<script>
+    record([2019, 3, 25], '生日', true);
+    record([2019, 1, 1], '新的一年', true);
+    record([2018, 11, 20], '上班', true);
+    record([2019, 4, 28], '搬家', true);
+    record([2020, 1, 24], '除夕', true);
+
+
+
+    function record(time, event, flag = false) {
+        let imgList = [
+            'http://www.ruanyifeng.com/images_pub/pub_249.jpg',
+            'http://www.ruanyifeng.com/images_pub/pub_23.jpg',
+            'http://www.ruanyifeng.com/images_pub/pub_321.jpg',
+            'http://www.ruanyifeng.com/images_pub/pub_51.jpg',
+            'http://www.ruanyifeng.com/images_pub/pub_206.jpg'
+        ];
+        let date1 = Date.now();
+        if(flag){
+            time[1] = time[1] - 1;
+            var rom = Math.floor(imgList.length * Math.random());
+            document.body.style.backgroundImage = `url(${imgList[rom]})`;
+        }
+        let date2 = new Date(...time),
+        week = date2.getDay(),
+        date3;
+        switch(week){
+            case 0:
+                week = '日';
+                break;
+            case 1:
+                week = '一';
+                break;
+            case 2:
+                week = '二';
+                break;
+            case 3:
+                week = '三';
+                break;
+            case 4:
+                week = '四';
+                break;
+            case 5:
+                week = '五';
+                break;
+            default:
+                week = '六';
+        }
+        if(date1 >= date2){
+            date3 = Math.floor((date1 - date2)/1000);
+        }else{
+            date3 = Math.floor((date2 - date1)/1000);
+        }
+        let day = Math.floor(date3/(60*60*24)),
+        hours = Math.floor(date3/(60*60))%24,
+        minute = Math.floor(date3/60)%60,
+        second = date3 % 60,
+        pList = document.getElementsByTagName('p');
+        if(pList.length > 0){
+            for(var i = 0; i < pList.length; i ++){
+                if(pList[i].getAttribute('id') == date2.getTime()){
+                    if(date1 <= date2){
+                        pList[i].innerText = `距离${time[0]}年${event}还有${day}天${hours}小时${minute}分钟${second}秒，那一天是星期${week}。`;
+                    }else{
+                        pList[i].innerText = `从${time[0]}年${event}开始已经过去了${day}天${hours}小时${minute}分钟${second}秒，当时那一天是星期${week}。`;
+                    }
+                    return false;
+                }
+            }
+            let p = document.createElement('p');
+            p.setAttribute('id', date2.getTime());
+            if(date1 <= date2){
+                p.innerText = `距离${time[0]}年${event}还有${day}天${hours}小时${minute}分钟${second}秒，那一天是星期${week}。`;
+            }else{
+                p.innerText = `从${time[0]}年${event}开始已经过去了${day}天${hours}小时${minute}分钟${second}秒，当时那一天是星期${week}。`;
+            }
+            document.body.appendChild(p);
+        }else{
+            let p = document.createElement('p');
+            p.setAttribute('id', date2.getTime());
+            if(date1 <= date2){
+                p.innerText = `距离${time[0]}年${event}还有${day}天${hours}小时${minute}分钟${second}秒，那一天是星期${week}。`;
+            }else{
+                p.innerText = `从${time[0]}年${event}开始已经过去了${day}天${hours}小时${minute}分钟${second}秒，当时那一天是星期${week}。`;
+            }
+            document.body.appendChild(p);
+        }
+        setInterval(record, 1000, time, event);
+    }
+</script>
+</body>
+</html>

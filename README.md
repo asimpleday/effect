@@ -31,6 +31,7 @@
 - jqzoom  &nbsp;&nbsp;———— &nbsp;&nbsp;图片放大镜
 - mobile  &nbsp;&nbsp;———— &nbsp;&nbsp;移动端rem布局模板
 - fullPage  ————   fullPage轮播滚动页
+- record ———— 倒计时日历
 
 ## 查看
 https://asimpleday.github.io/effect/xiaomi-up-down-slide/
