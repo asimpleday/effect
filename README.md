@@ -32,6 +32,7 @@
 - mobile  &nbsp;&nbsp;———— &nbsp;&nbsp;移动端rem布局模板
 - fullPage  ————   fullPage轮播滚动页
 - record ———— 倒计时日历
+- lightbox2———— 图片放大相册轮播
 
 ## 查看
 https://asimpleday.github.io/effect/xiaomi-up-down-slide/
