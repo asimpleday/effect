@@ -27,13 +27,13 @@
     }
 </style>
 <script>
-    record([2019, 3, 25], '生日', true);
+    record([2020, 7, 23], '交房', true);
+record([2019, 3, 25], '生日', true);
     record([2019, 1, 1], '新的一年', true);
     record([2018, 11, 20], '上班', true);
-    record([2019, 4, 28], '搬家', true);
     record([2020, 1, 24], '除夕', true);
-
-
+    record([2019, 3, 26], '1', true);
+    percent();
 
     function record(time, event, flag = false) {
         let imgList = [
@@ -41,15 +41,31 @@
             'http://www.ruanyifeng.com/images_pub/pub_23.jpg',
             'http://www.ruanyifeng.com/images_pub/pub_321.jpg',
             'http://www.ruanyifeng.com/images_pub/pub_51.jpg',
-            'http://www.ruanyifeng.com/images_pub/pub_206.jpg'
+            'http://www.ruanyifeng.com/images_pub/pub_206.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554959130610&di=4f3366c0a692168745e08555d20c477a&imgtype=0&src=http%3A%2F%2Fattimg.dospy.com%2Fimg%2Fday_130409%2F20130409_ce7ff84c5ab2ab291fa92OA9rU77OS3x.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554959130563&di=348960c360e9e18796a949b4b97c4671&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201303%2F16%2F212410b5d4zzpfepyiaaty.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554959130564&di=b1aeaed64499320db5f878ee969484b9&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F9fo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2F3ac79f3df8dcd100501e1ae0708b4710b8122f75.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554959313366&di=a9afb064517011fe4311aed14d5a0b82&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1342070833%2C947458557%26fm%3D214%26gp%3D0.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554959130565&di=d5105599d3d09ff7727e75c94eb12f8c&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201405%2F03%2F022912j3vf5yksfbd3b3tz.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554959130565&di=dd80988fc765c29fc27ba9368a1fc92d&imgtype=0&src=http%3A%2F%2Fp17.qhimg.com%2Fbdr%2F__%2Fd%2F_open360%2Ffengjing1257%2FABC15cbd.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554959130567&di=7796d615bb6e1c7e2c9d89dce914498e&imgtype=0&src=http%3A%2F%2Fwww.wallcoo.com%2Fnature%2FApple_OSX_Mountain_Lion_Secret_Wallpapers%2Fwallpapers%2F1920x1080%2FCosmos04.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554959130567&di=9e27f74deee2910ec15b775af3bab572&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F3%2F5174ac33b1177.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554959130568&di=f5c7dbc93e4d6c526e45e4821c88f0a3&imgtype=0&src=http%3A%2F%2Fwww.33lc.com%2Farticle%2FUploadPic%2F2012-7%2F201272713582364314.jpg',
+
         ];
+        // 现在时间点的毫秒数
         let date1 = Date.now();
+
+        // 随机设置背景
         if(flag){
             time[1] = time[1] - 1;
-            var rom = Math.floor(imgList.length * Math.random());
+            let rom = Math.floor(imgList.length * Math.random());
             document.body.style.backgroundImage = `url(${imgList[rom]})`;
         }
+        // 传入日期的毫秒数
         let date2 = new Date(...time),
+
+        // 计算是星期几
         week = date2.getDay(),
         date3;
         switch(week){
@@ -79,13 +95,15 @@
         }else{
             date3 = Math.floor((date2 - date1)/1000);
         }
+
+        // 计算剩余天、小时、分、秒
         let day = Math.floor(date3/(60*60*24)),
         hours = Math.floor(date3/(60*60))%24,
         minute = Math.floor(date3/60)%60,
         second = date3 % 60,
         pList = document.getElementsByTagName('p');
         if(pList.length > 0){
-            for(var i = 0; i < pList.length; i ++){
+            for(let i = 0; i < pList.length; i ++){
                 if(pList[i].getAttribute('id') == date2.getTime()){
                     if(date1 <= date2){
                         pList[i].innerText = `距离${time[0]}年${event}还有${day}天${hours}小时${minute}分钟${second}秒，那一天是星期${week}。`;
@@ -114,6 +132,28 @@
             document.body.appendChild(p);
         }
         setInterval(record, 1000, time, event);
+    }
+
+
+    function percent() {
+        let year = new Date().getFullYear(), // 确定今年的年份
+            isLeapYear = (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0);   // 确定今年是否为闰年
+            allDay = isLeapYear ? 366 : 365,   // 确定今年有多少天
+            startMillisecond = new Date(year, 0, 1),   // 确定今年开始时的毫秒值
+            nowMillisecond = Date.now() - startMillisecond,   // 确定今年已经过去了多少毫秒
+            nowAllDay = Math.floor(nowMillisecond/1000/60/60/24),   // 确定今年过去了多少天
+            percent = toFixed(nowAllDay / allDay * 100, 3)   // 百分比
+            surplusPercent = toFixed(100 - percent, 10),
+            p = document.createElement('p');
+            p.innerText = `今年一共有${allDay}天，到今天为止过去了${nowAllDay}天，也就是过去了${percent}%，剩余${surplusPercent}%。`;
+        document.body.appendChild(p);
+    }
+    // 四舍五入
+    function toFixed(num, s) {
+        let times = Math.pow(10, s);
+        let des = num * times + 0.5;
+        des = parseInt(des, 10) / times;
+        return des + '';
     }
 </script>
 </body>
