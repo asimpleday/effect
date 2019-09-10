@@ -37,6 +37,8 @@
 ## 查看
 https://asimpleday.github.io/effect/xiaomi-up-down-slide/
 
+测试下vscode连接github...(#^.^#)
+
 
 
 
