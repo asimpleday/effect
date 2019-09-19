@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="layuiadmin/layui/css/layui.css">
+    <style>
+       .layui-form:nth-child(1){
+           margin-top: 250px;
+           
+       } 
+       .layui-form{
+        margin-left: 500px;
+       }
+    </style>
+</head>
+<body>
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">联动选择框</label>
+                <div class="layui-input-block">
+                    <div class="layui-inline">
+                    <select name="Province" id="Province" lay-filter="Province">
+                        <option value="">请选择省</option>
+                    </select>
+                    </div>
+                    <div class="layui-inline">
+                    <select name="City" id="City" lay-filter="City">
+                        <option value="">请选择市</option>
+                    </select>
+                    </div>
+                    <div class="layui-inline">
+                    <select name="District" id="District" lay-filter="District">
+                        <option value="">请选择县/区</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div action="" class="layui-form" id="form2">
+            <div class="layui-form-item">
+                <label class="layui-form-label">联动选择框</label>
+                <div class="layui-input-block">
+                    <div class="layui-inline">
+                    <select name="Province2" id="Province2" lay-filter="Province2">
+                        <option value="">请选择省</option>
+                    </select>
+                    </div>
+                    <div class="layui-inline">
+                    <select name="City2" id="City2" lay-filter="City2">
+                        <option value="">请选择市</option>
+                    </select>
+                    </div>
+                    <div class="layui-inline">
+                    <select name="District2" id="District2" lay-filter="District2">
+                        <option value="">请选择县/区</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div action="" class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">联动选择框</label>
+                <div class="layui-input-block">
+                    <div class="layui-inline">
+                    <select name="Province3" id="Province3" lay-filter="Province3">
+                        <option value="">请选择省</option>
+                    </select>
+                    </div>
+                    <div class="layui-inline">
+                    <select name="City3" id="City3" lay-filter="City3">
+                        <option value="">请选择市</option>
+                    </select>
+                    </div>
+                    <div class="layui-inline">
+                    <select name="District3" id="District3" lay-filter="District3">
+                        <option value="">请选择县/区</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="layuiadmin/layui/layui.js"></script>
+        <script>
+            layui.config({
+                    base: 'layuiadmin/' //静态资源所在路径
+                   , version: true
+                }).extend({
+                    index: 'lib/index' //主入口模块
+                }).use(['index', 'jquery', 'layer', 'laydate', 'area','upload', 'form', 'common'], function () {
+                    var element = layui.element,
+                    index = layui.index,
+                    $ = layui.jquery,
+                    area = layui.area,
+                    laytpl = layui.layer,
+                    laydate = layui.laydate,
+                    form = layui.form,
+                    upload = layui.upload,
+                    uploadImgAll = layui.uploadImgAll,
+                    linkage = layui.linkage,
+                    common = layui.common;
+        
+        
+                       
+                        
+        
+                        
+                    
+                    var area1 = new area();
+                    area1.definitionname({   // 设置默认省市区
+                        province: "Province", 
+                        city: "City", 
+                        district: "District", 
+                        provinceCode: 340000, 
+                        cityCode: 340800, 
+                        districtCode: 340827,
+                    });
+
+                    var area2 = new area();
+                    area2.definitionname({  
+                        province: "Province3", 
+                        city: "City3", 
+                        district: "District3"
+                    });
+
+                    // console.log(area.config);
+                  
+                    })
+        
+        </script>
+</body>
+</html>
