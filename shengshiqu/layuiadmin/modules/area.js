@@ -22,7 +22,7 @@ layui.define(["form", "jquery"], function(exports){
                     }
                 })
             },
-            this.definitionname = function(initConfig){
+            this.init = function(initConfig){
                 this.config.province = initConfig.province;
                 this.config.city = initConfig.city;
                 this.config.district = initConfig.district;
@@ -40,53 +40,55 @@ layui.define(["form", "jquery"], function(exports){
             },
             this.loadProvince = function(){   // 加载省
                 var that = this;
-                $("select[name="+ that.config.province +"]").empty();
-                that.appendOption($("select[name="+ that.config.province +"]"), "请选择省", "");
+                $("select[id="+ that.config.province +"]").empty();
+                that.appendOption($("select[id="+ that.config.province +"]"), "请选择省", "");
                 $.each(that.areaData, function(k, v){
-                    that.appendOption($("select[name="+ that.config.province +"]"), v.province, v.code, that.config.provinceCode);
+                    that.appendOption($("select[id="+ that.config.province +"]"), v.province, v.code, that.config.provinceCode);
                 })
-                that.loadCity(that.config);
                 form.on("select("+ that.config.province +")", function(data){
                     that.loadCity(data);
                 })
-                
+                that.loadCity(that.config);
             },
             this.loadCity = function(data){   // 加载市
                 var that = this;
+                // 是否选了具体的省份
                 if(data.value == ""){
                     that.config.provinceCode = "";
-                    that.config.cityCode = "";
+                }else{
+                    that.config.provinceCode = data.value ? data.value : that.config.provinceCode;
                 }
-                $("select[name="+ that.config.city +"]").empty();
-                that.appendOption($("select[name="+ that.config.city +"]"), "请选择市", "");
-                that.config.provinceCode = data.value ? data.value : that.config.provinceCode;
+                $("select[id="+ that.config.city +"]").empty();
+                that.appendOption($("select[id="+ that.config.city +"]"), "请选择市", "");
                 $.each(that.areaData, function(k, v){
                     if(that.config.provinceCode == v.code){
                         $.each(v.citylist, function(k, v){
-                            that.appendOption($("select[name="+ that.config.city +"]"), v.city, v.code, that.config.cityCode); 
+                            that.appendOption($("select[id="+ that.config.city +"]"), v.city, v.code, that.config.cityCode); 
                         })
                     }
                 })
-                that.loadDistrict(that.config);
                 form.on("select("+ that.config.city +")", function(data){
                     that.loadDistrict(data);
                 })
+                that.loadDistrict(that.config);
                 
             },
             this.loadDistrict = function(data){   // 加载区
                 var that = this;
                 if(data.value == ""){
                     that.config.cityCode = "";
+                }else{
+                    that.config.cityCode = data.value ? data.value : that.config.cityCode;
                 }
-                $("select[name="+ that.config.district +"]").empty();
-                that.appendOption($("select[name="+ that.config.district +"]"), "请选择县/区", "");
-                that.config.cityCode = data.value ? data.value : that.config.cityCode;
+                $("select[id="+ that.config.district +"]").empty();
+                that.appendOption($("select[id="+ that.config.district +"]"), "请选择县/区", "");
+                
                 $.each(that.areaData, function(k, v){
                     if(that.config.provinceCode == v.code){
                         $.each(v.citylist, function(k, v){
                             if(that.config.cityCode == v.code){
                                 $.each(v.districtlist, function(k, v){
-                                    that.appendOption($("select[name="+ that.config.district +"]"), v.district, v.code, that.config.districtCode);
+                                    that.appendOption($("select[id="+ that.config.district +"]"), v.district, v.code, that.config.districtCode);
                                 })
                             }
                         })

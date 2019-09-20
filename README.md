@@ -33,6 +33,7 @@
 - fullPage  ————   fullPage轮播滚动页
 - record ———— 倒计时日历
 - lightbox2———— 图片放大相册轮播
+- shengshiqu———— 基于layuiadmin封装的省市区三级联动模块
 
 ## 查看
 https://asimpleday.github.io/effect/xiaomi-up-down-slide/

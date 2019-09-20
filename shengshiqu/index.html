@@ -61,28 +61,6 @@
                 </div>
             </div>
         </div>
-        <div action="" class="layui-form">
-            <div class="layui-form-item">
-                <label class="layui-form-label">联动选择框</label>
-                <div class="layui-input-block">
-                    <div class="layui-inline">
-                    <select name="Province3" id="Province3" lay-filter="Province3">
-                        <option value="">请选择省</option>
-                    </select>
-                    </div>
-                    <div class="layui-inline">
-                    <select name="City3" id="City3" lay-filter="City3">
-                        <option value="">请选择市</option>
-                    </select>
-                    </div>
-                    <div class="layui-inline">
-                    <select name="District3" id="District3" lay-filter="District3">
-                        <option value="">请选择县/区</option>
-                    </select>
-                    </div>
-                </div>
-            </div>
-        </div>
         <script src="layuiadmin/layui/layui.js"></script>
         <script>
             layui.config({
@@ -110,7 +88,7 @@
                         
                     
                     var area1 = new area();
-                    area1.definitionname({   // 设置默认省市区
+                    area1.init({   // 设置默认省市区
                         province: "Province", 
                         city: "City", 
                         district: "District", 
@@ -120,13 +98,11 @@
                     });
 
                     var area2 = new area();
-                    area2.definitionname({  
-                        province: "Province3", 
-                        city: "City3", 
-                        district: "District3"
+                    area2.init({  
+                        province: "Province2", 
+                        city: "City2", 
+                        district: "District2"
                     });
-
-                    // console.log(area.config);
                   
                     })
         
